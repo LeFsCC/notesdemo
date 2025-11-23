@@ -37,8 +37,3 @@
 * 代码质量：ESLint, Prettier
 * 版本控制：Husky, Lint-staged
 
-
-## 获取本项目专栏
-
-**本文档仅为星球内部专享，大家可以加入[知识星球](https://programmercarl.com/other/kstar.html)里获取，在星球置顶一**。
-
