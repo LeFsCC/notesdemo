@@ -89,7 +89,7 @@ export default class FetchClient implements HttpClient {
 
       if (result.code !== Code.SUCCESS) {
         // 事先判断
-        throw new Error(result.msg)
+        throw new Error(result.msg + ' requestURL: ' + requestURL)
       }
 
       return result
@@ -97,7 +97,11 @@ export default class FetchClient implements HttpClient {
     } catch (error) {
       // 捕获错误并包装为统一响应格式
       console.error('error', error)
-      throw new Error(error instanceof Error ? error.message : 'Unknown error')
+      throw new Error(
+        error instanceof Error
+          ? error.message + ' requestURL: ' + requestURL
+          : 'Unknown error',
+      )
     }
   }
 }

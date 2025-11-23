@@ -77,10 +77,10 @@ public class UserServiceImpl implements UserService {
                 return ApiResponseUtil.error("请提供邮箱验证码");
             }
 
-            // 验证邮箱验证码
-            if (!emailService.checkVerificationCode(request.getEmail(), request.getVerifyCode())) {
-                return ApiResponseUtil.error("验证码无效或已过期");
-            }
+//            // 验证邮箱验证码
+//            if (!emailService.checkVerificationCode(request.getEmail(), request.getVerifyCode())) {
+//                return ApiResponseUtil.error("验证码无效或已过期");
+//            }
         }
 
         // 创建新用户

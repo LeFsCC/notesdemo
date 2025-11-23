@@ -40,7 +40,14 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:5173", "http://127.0.0.1:5173")  // 允许的域名
+                .allowedOrigins(
+                        "http://localhost:5173",
+                        "http://127.0.0.1:5173",
+                        "http://106.53.211.118:5173",
+                        "http://localhost:8080",
+                        "http://127.0.0.1:8080",
+                        "http://106.53.211.118:8080"
+                        )  // 允许的域名
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")// 允许的 HTTP 方法
                 .allowedHeaders("*")
                 .allowCredentials(true)

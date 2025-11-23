@@ -31,6 +31,7 @@ public class SecurityConfig {
             .csrf().disable()
             .authorizeRequests()
                 .antMatchers("/api/**").permitAll()
+                .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
             .and()
             .formLogin().disable()
@@ -42,7 +43,12 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173")); // 允许的前端域名
+        configuration.setAllowedOrigins(Arrays.asList(
+                "http://localhost:5173",
+                "http://106.53.211.118:5173",
+                "http://localhost:8080",
+                "http://106.53.211.118:8080"
+        )); // 允许的前端域名
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
